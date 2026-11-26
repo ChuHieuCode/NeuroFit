@@ -1,0 +1,139 @@
+/**
+ * NeuroFit Design System — Phase 1 Design Tokens
+ * Soft Wellness Neo-Minimalist Design System
+ */
+
+:root, [data-theme="light"] {
+  --bg-app: #F6F8FC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #EEF2F8;
+  --bg-elevated: rgba(255, 255, 255, 0.88);
+  
+  --border-subtle: rgba(15, 23, 42, 0.07);
+  --border-strong: rgba(15, 23, 42, 0.14);
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  
+  --brand-primary: #4F46E5;
+  --brand-primary-hover: #4338CA;
+  --brand-primary-soft: rgba(79, 70, 229, 0.10);
+  --brand-secondary: #0D9488;
+  
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+
+  /* Category Tokens (Light Tints) */
+  --cat-memory: #6366F1;
+  --cat-memory-soft: #EEF2FF;
+  --cat-attention: #F59E0B;
+  --cat-attention-soft: #FEF3C7;
+  --cat-speed: #06B6D4;
+  --cat-speed-soft: #ECFEFF;
+  --cat-problem: #10B981;
+  --cat-problem-soft: #ECFDF5;
+  --cat-math: #3B82F6;
+  --cat-math-soft: #EFF6FF;
+  --cat-flexibility: #EC4899;
+  --cat-flexibility-soft: #FDF2F8;
+  --cat-language: #8B5CF6;
+  --cat-language-soft: #F5F3FF;
+  --cat-logic: #F97316;
+  --cat-logic-soft: #FFF7ED;
+
+  /* Typography & Radii */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Shadows & Transitions */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 8px 30px rgba(15, 23, 42, 0.10);
+  --shadow-modal: 0 20px 50px rgba(15, 23, 42, 0.20);
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg-app: #0B1120;
+  --bg-surface: #131C31;
+  --bg-surface-subtle: #1C2842;
+  --bg-elevated: rgba(19, 28, 49, 0.88);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  
+  --brand-primary: #6366F1;
+  --brand-primary-hover: #818CF8;
+  --brand-primary-soft: rgba(99, 102, 241, 0.16);
+  --brand-secondary: #14B8A6;
+  
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+
+  /* Category Tokens (Dark Tints) */
+  --cat-memory: #818CF8;
+  --cat-memory-soft: rgba(129, 140, 248, 0.15);
+  --cat-attention: #FBBF24;
+  --cat-attention-soft: rgba(251, 191, 36, 0.15);
+  --cat-speed: #22D3EE;
+  --cat-speed-soft: rgba(34, 211, 238, 0.15);
+  --cat-problem: #34D399;
+  --cat-problem-soft: rgba(52, 211, 153, 0.15);
+  --cat-math: #60A5FA;
+  --cat-math-soft: rgba(96, 165, 250, 0.15);
+  --cat-flexibility: #F472B6;
+  --cat-flexibility-soft: rgba(244, 114, 182, 0.15);
+  --cat-language: #A78BFA;
+  --cat-language-soft: rgba(167, 139, 250, 0.15);
+  --cat-logic: #FB923C;
+  --cat-logic-soft: rgba(251, 146, 60, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="forest"] {
+  --bg-app: #F2F7F4;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #E2ECE6;
+  --bg-elevated: rgba(255, 255, 255, 0.90);
+  --border-subtle: rgba(15, 118, 110, 0.08);
+  --border-strong: rgba(15, 118, 110, 0.18);
+  --text-primary: #0F2922;
+  --text-secondary: #334E46;
+  --text-muted: #5C766E;
+  --brand-primary: #0F766E;
+  --brand-primary-hover: #115E59;
+  --brand-primary-soft: rgba(15, 118, 110, 0.12);
+  --brand-secondary: #10B981;
+}
+
+[data-theme="coral"] {
+  --bg-app: #FFF8F6;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #FDE8E4;
+  --bg-elevated: rgba(255, 255, 255, 0.90);
+  --border-subtle: rgba(234, 88, 12, 0.08);
+  --border-strong: rgba(234, 88, 12, 0.18);
+  --text-primary: #2C1810;
+  --text-secondary: #5A3D31;
+  --text-muted: #856254;
+  --brand-primary: #EA580C;
+  --brand-primary-hover: #C2410C;
+  --brand-primary-soft: rgba(234, 88, 12, 0.12);
+  --brand-secondary: #F59E0B;
+}

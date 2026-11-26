@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Squircle Base -->
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Neural Grid Background Lines -->
+  <g opacity="0.12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round">
+    <path d="M 128 256 Q 256 128 384 256" fill="none" />
+    <path d="M 128 256 Q 256 384 384 256" fill="none" />
+    <circle cx="256" cy="256" r="140" fill="none" stroke-dasharray="8 8" />
+  </g>
+
+  <!-- Central Symmetric Neural Spark / Brain Pathways Mark -->
+  <g filter="url(#glow)">
+    <!-- Left hemisphere pathway -->
+    <path d="M 256 120 C 190 120, 140 170, 140 240 C 140 280, 160 315, 190 340 L 220 315 C 200 298, 185 272, 185 240 C 185 195, 215 162, 256 162 Z" fill="url(#sparkGrad)" />
+    
+    <!-- Right hemisphere pathway -->
+    <path d="M 256 120 C 322 120, 372 170, 372 240 C 372 280, 352 315, 322 340 L 292 315 C 312 298, 327 272, 327 240 C 327 195, 297 162, 256 162 Z" fill="url(#sparkGrad)" />
+
+    <!-- Central Neural Spark Core -->
+    <path d="M 256 170 L 276 230 L 336 250 L 276 270 L 256 330 L 236 270 L 176 250 L 236 230 Z" fill="#FFFFFF" />
+    
+    <!-- Nodes / Synapses -->
+    <circle cx="256" cy="120" r="12" fill="#FFFFFF" />
+    <circle cx="140" cy="240" r="10" fill="#FFFFFF" opacity="0.9" />
+    <circle cx="372" cy="240" r="10" fill="#FFFFFF" opacity="0.9" />
+    <circle cx="190" cy="340" r="10" fill="#FFFFFF" opacity="0.8" />
+    <circle cx="322" cy="340" r="10" fill="#FFFFFF" opacity="0.8" />
+    <circle cx="256" cy="375" r="14" fill="#FFFFFF" />
+  </g>
+</svg>

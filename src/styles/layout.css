@@ -1,0 +1,568 @@
+/**
+ * NeuroFit Design System — Layout CSS (App Shell, Sidebar, Topbar, Mobile Nav, Arena)
+ */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* App Shell Desktop */
+.app-shell {
+  display: grid;
+  grid-template-columns: 264px minmax(0, 1fr);
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Mobile App Shell */
+@media (max-width: 1023.98px) {
+  .app-shell {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Desktop Sidebar */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-subtle);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+}
+
+@media (max-width: 1023.98px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 24px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-brand img, .sidebar-brand svg {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+.sidebar-brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.sidebar-brand-text span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.925rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: var(--bg-surface-subtle);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary);
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-daily-card {
+  margin-top: auto;
+  padding: 16px;
+  background: var(--bg-surface-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Main Wrapper & Topbar */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-elevated);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1023.98px) {
+  .topbar {
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .topbar {
+    padding: 8px 12px;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+}
+
+.topbar-brand-mobile {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+@media (max-width: 1023.98px) {
+  .topbar-brand-mobile {
+    display: flex;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .topbar-brand-mobile {
+    gap: 7px;
+    flex-shrink: 0;
+  }
+  .topbar-brand-mobile img {
+    width: 28px;
+    height: 28px;
+  }
+  .topbar-brand-mobile span {
+    font-size: 1rem;
+  }
+}
+
+.topbar-brand-mobile img, .topbar-brand-mobile svg {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.topbar-brand-mobile span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+@media (max-width: 767.98px) {
+  .topbar-actions {
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+}
+
+/* Pills & Chips */
+.streak-pill, .xp-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+@media (max-width: 767.98px) {
+  .streak-pill {
+    padding: 4px 9px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .streak-pill .streak-unit {
+    display: none;
+  }
+  .xp-pill {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .xp-pill {
+    display: none;
+  }
+}
+
+.streak-pill svg {
+  color: var(--warning);
+}
+
+.xp-pill svg {
+  color: var(--brand-primary);
+}
+
+.xp-mini-bar {
+  width: 48px;
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.xp-mini-fill {
+  height: 100%;
+  background: var(--brand-primary);
+  border-radius: var(--radius-pill);
+}
+
+.icon-pill-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 767.98px) {
+  .icon-pill-btn {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+  #topbar-lang-btn {
+    padding: 0 8px !important;
+    font-size: 0.74rem !important;
+    height: 34px;
+    white-space: nowrap;
+  }
+}
+
+.icon-pill-btn:hover {
+  background: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 12px;
+}
+
+@media (max-width: 767.98px) {
+  .topbar-right {
+    gap: 6px;
+    margin-left: 4px;
+    flex-shrink: 0;
+  }
+}
+
+.profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 4px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .profile-chip {
+    padding: 2px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .profile-chip > span {
+    display: none;
+  }
+}
+
+.profile-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* View Container */
+.view-container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px;
+  animation: viewFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 1023.98px) {
+  .view-container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 639.98px) {
+  .view-container {
+    padding: 14px 12px 24px;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes viewFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Bottom Nav */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 1023.98px) {
+  .mobile-bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background: var(--bg-elevated);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid var(--border-subtle);
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+  }
+}
+
+.mobile-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-weight: 600;
+  gap: 3px;
+  transition: color 0.2s ease;
+}
+
+.mobile-tab svg {
+  width: 20px;
+  height: 20px;
+}
+
+.mobile-tab.active {
+  color: var(--brand-primary);
+}
+
+/* Mobile More Sheet */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.sheet-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-more-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 210;
+  background: var(--bg-surface);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 20px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  box-shadow: var(--shadow-modal);
+  transform: translateY(100%);
+  pointer-events: none;
+  visibility: hidden;
+  transition: transform 0.28s var(--ease-spring), visibility 0.28s ease;
+}
+
+.mobile-more-sheet.open {
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.sheet-close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-surface-subtle);
+  color: var(--text-secondary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-subtle);
+  transition: background 0.2s ease;
+}
+
+.sheet-item:hover {
+  background: var(--border-subtle);
+}
+
+.sheet-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-primary);
+}
+
+/* Arena Overlay (Fullscreen Game Shell) */
+.arena-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 300;
+  background: var(--bg-app);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overscroll-behavior: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.arena-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 20px 12px 20px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.arena-hud-pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arena-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow-y: auto;
+}

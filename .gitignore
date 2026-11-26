@@ -1,0 +1,15 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local AI / Agent workspace instructions (keep out of public repo)
+AGENTS.md
+GEMINI.md
+.agent/
+.agents/
+
+# Dependencies (none required, just in case)
+node_modules/
